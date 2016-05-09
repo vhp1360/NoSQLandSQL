@@ -18,7 +18,7 @@ libselinux-utils setroubleshoot-server setools setools-console
 mcstrans-y --nogpgcheck
 
 <div dir='rtl' align='right'>۲-نصب کتابخانه های مورد نیاز اوراکل(که در همین منبع در آموزشی دیگر موجود
-است).
+است).</div>
 
 2-Installing Oracle if you need(you may fing in OracleOCI file in this
 repository).
