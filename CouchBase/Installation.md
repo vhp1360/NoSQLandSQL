@@ -35,7 +35,7 @@ repository).
 couchbase1,2,3,4 support Python2.
 
 <div dir='rtl' align='right'>۴-نسخه مورد نظر پایگاه داده
-[کوچ-بیس](http://www.couchbase.com/nosql-databases/downloads) را تهیه
+<a href="http://www.couchbase.com/nosql-databases/downloads">کوچ-بیس</a> را تهیه
 کرده</div>
 
 4-download approperiate
