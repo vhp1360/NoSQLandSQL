@@ -1,7 +1,7 @@
-<html dir="rtl">
-بنام خدا
+<html dir='rtl'>
+<div dir='rtl' align='right'>بنام خدا</div>
 
-نصب و تنظیم پایگاه داده Couchbase
+نصب و تنظیم پایگاه داده کوچ-بیس
 
 Installation and configuration of Couchbase
 
