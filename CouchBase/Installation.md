@@ -1,4 +1,3 @@
-<html dir='rtl'>
 <div dir='rtl' align='right'>بنام خدا</div>
 
 <div dir='rtl' align='right'>نصب و تنظیم پایگاه داده کوچ-بیس</div>
@@ -47,4 +46,3 @@ and install.
 
 5-after installation, you should open needed ports in iptables.
 
-</html>
