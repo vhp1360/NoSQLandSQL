@@ -1,13 +1,13 @@
 <html dir='rtl'>
 <div dir='rtl' align='right'>بنام خدا</div>
 
-نصب و تنظیم پایگاه داده کوچ-بیس
+<div dir='rtl' align='right'>نصب و تنظیم پایگاه داده کوچ-بیس</div>
 
 Installation and configuration of Couchbase
 
 OS:CentOS7 Minimal
 
-۱-نصب نرم افزار های اولیه
+<div dir='rtl' align='right'>۱-نصب نرم افزار های اولیه</div>
 
 1-fisrt, install some packages
 
@@ -17,33 +17,33 @@ policycoreutils-python selinux-policy selinux-policy-targeted
 libselinux-utils setroubleshoot-server setools setools-console
 mcstrans-y --nogpgcheck
 
-۲-نصب کتابخانه های مورد نیاز اوراکل(که در همین منبع در آموزشی دیگر موجود
+<div dir='rtl' align='right'>۲-نصب کتابخانه های مورد نیاز اوراکل(که در همین منبع در آموزشی دیگر موجود
 است).
 
 2-Installing Oracle if you need(you may fing in OracleOCI file in this
 repository).
 
--پس از نصب جاوا و پایتون لازم است که فایل پروفایل مجددا تنظیم شود.
+<div dir='rtl' align='right'>-پس از نصب جاوا و پایتون لازم است که فایل پروفایل مجددا تنظیم شود.</div>
 
 -After installing Java And Python, profile file should be touch.
 
-۳-نصب پایتون(چون برای ارتباط با پایگاه داده یکی از انتخاب های خوب می
+<div dir='rtl' align='right'>۳-نصب پایتون(چون برای ارتباط با پایگاه داده یکی از انتخاب های خوب می
 باشد.)توسط نصب کننده آناکوندا.توجه شود که تانسخه ۴ پایگاه داده کوچ-بیس ،
-پایتون۲ قابل استفاده می باشد.
+پایتون۲ قابل استفاده می باشد.</div>
 
 3-Installing Python from Anaconda Installer. be informed,
 couchbase1,2,3,4 support Python2.
 
-۴-نسخه مورد نظر پایگاه داده
+<div dir='rtl' align='right'>۴-نسخه مورد نظر پایگاه داده
 [کوچ-بیس](http://www.couchbase.com/nosql-databases/downloads) را تهیه
-کرده
+کرده</div>
 
 4-download approperiate
 [couchbase](http://www.couchbase.com/nosql-databases/downloads) version
 and install.
 
-۵-پس از نصب کوچ-بیس باید پورت های مورد نیاز را در دیواره آتش(جدول آدرس
-ها) باز نمایید
+<div dir='rtl' align='right'>۵-پس از نصب کوچ-بیس باید پورت های مورد نیاز را در دیواره آتش(جدول آدرس
+ها) باز نمایید</div>
 
 5-after installation, you should open needed ports in iptables.
 
