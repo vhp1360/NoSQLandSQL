@@ -8,6 +8,9 @@ In addition, generally speaking, Couchbase works hard to keep as much of the dat
 
 http://developer.couchbase.com/documentation/server/4.1/developer-guide/raw-append-prepend.html#story-h2-2<br/>
 
+Currently there is a hard limit of 10,000 concurrent key-value connections to any cluster node. This effectively means a limit of 10,000 SDK “Bucket” objects.
+
+
 <div dir="rtl"></div>
 <div dir="rtl"></div>
 <div dir="rtl"></div>
