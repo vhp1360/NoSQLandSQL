@@ -17,11 +17,13 @@ Currently there is a hard limit of 10,000 concurrent key-value connections to an
     
 
 - View Sample: Bank Transaction, get report each Account who sender or receiver
+
     function(meta,doc){
       emit(doc.From,doc.DepositeSender)
       emit(doc.To  ,doc.DepositeReceiver)
 
 - View Sample: State of Transactions for each day, each Account
+
     function (doc, meta) {
       var docTime=doc.Time.split(" ")[0]
           
@@ -31,6 +33,7 @@ Currently there is a hard limit of 10,000 concurrent key-value connections to an
     }
 
 - View Sample: Today Transaction for Account
+
     function (doc, meta) {
       var today = new Date();
       var dd = today.getDate();
