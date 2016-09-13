@@ -22,7 +22,8 @@ Currently there is a hard limit of 10,000 concurrent key-value connections to an
 2-View Sample: Bank Transaction, get report each Account who sender or receiver<br/>
 
 
-```function(meta,doc){
+```
+    function(meta,doc){
       emit(doc.From,doc.DepositeSender)
       emit(doc.To  ,doc.DepositeReceiver)
 ```
