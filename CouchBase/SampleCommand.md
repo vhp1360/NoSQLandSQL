@@ -12,13 +12,11 @@ In addition, generally speaking, Couchbase works hard to keep as much of the dat
 Currently there is a hard limit of 10,000 concurrent key-value connections to any cluster node. This effectively means a limit of 10,000 SDK “Bucket” objects.<br/>
 
 1-create Index<br/>
-
     create primary index `From_Account` on `ShomaraDB` USING VIEW;
     
 
 <br/>
 2-View Sample: Bank Transaction, get report each Account who sender or receiver<br/>
-
     function(meta,doc){
       emit(doc.From,doc.DepositeSender)
       emit(doc.To  ,doc.DepositeReceiver)
