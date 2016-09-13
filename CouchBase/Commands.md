@@ -7,24 +7,24 @@ Change Water-Mark values<br/>
 
 In addition, generally speaking, Couchbase works hard to keep as much of the data as possible in memory including replicas. This benefits you in that you'll have faster failover in the event of failure. 
 
-http://developer.couchbase.com/documentation/server/4.1/developer-guide/raw-append-prepend.html#story-h2-2<br/>
+    http://developer.couchbase.com/documentation/server/4.1/developer-guide/raw-append-prepend.html#story-h2-2<br/>
 
 Currently there is a hard limit of 10,000 concurrent key-value connections to any cluster node. This effectively means a limit of 10,000 SDK “Bucket” objects.
 
-- create Index
+-create Index
 
     create primary index `From_Account` on `ShomaraDB` USING VIEW;
     
 
-- View Sample: Bank Transaction, get report each Account who sender or receiver
+-View Sample: Bank Transaction, get report each Account who sender or receiver
 
     function(meta,doc){
       emit(doc.From,doc.DepositeSender)
       emit(doc.To  ,doc.DepositeReceiver)
 
-- View Sample: State of Transactions for each day, each Account
+-View Sample: State of Transactions for each day, each Account
 
-    function (doc, meta) {
+     function (doc, meta) {
       var docTime=doc.Time.split(" ")[0]
           
       emit([docTime,doc.From_Account],parseInt(doc.depositofReceiver))
@@ -32,7 +32,7 @@ Currently there is a hard limit of 10,000 concurrent key-value connections to an
       emit([docTime,doc.From_Account],parseInt(doc.depositofSender))
     }
 
-- View Sample: Today Transaction for Account
+-View Sample: Today Transaction for Account
 
     function (doc, meta) {
       var today = new Date();
