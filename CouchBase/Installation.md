@@ -10,11 +10,11 @@ OS:CentOS7 Minimal
 
 1-fisrt, install some packages
 
-yum update -y --nogpgcheck && yum install java vim mlocate
-iptables-services bzip2 gcc gcc-c++ wget policycoreutils
-policycoreutils-python selinux-policy selinux-policy-targeted
-libselinux-utils setroubleshoot-server setools setools-console
-mcstrans-y net-tools --nogpgcheck
+    yum update -y --nogpgcheck && yum install java vim mlocate
+      iptables-services bzip2 gcc gcc-c++ wget policycoreutils
+      policycoreutils-python selinux-policy selinux-policy-targeted
+      libselinux-utils setroubleshoot-server setools setools-console
+      mcstrans-y net-tools --nogpgcheck
 
 <div dir='rtl' align='right'>۲-نصب کتابخانه های مورد نیاز اوراکل(که در همین منبع در آموزشی دیگر موجود
 است).</div>
