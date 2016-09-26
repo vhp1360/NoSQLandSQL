@@ -1,0 +1,27 @@
+<div dir='rtl'>بنام خدا</div>
+```
+SELECT * FROM tutorial WHERE fname = 'Ian';
+SELECT children[0].fname AS cname FROM tutorial WHERE fname='Dave';
+SELECT META(tutorial) AS meta FROM tutorial;
+SELECT DISTINCT orderlines[0].productId,fname, age, ROUND(age/7)  AS age_dog_years FROM tutorial\
+  WHERE fname = 'Dave' And age > 30 And  email LIKE '%@yahoo.com' And  children IS NULL;
+  WHERE ANY child IN tutorial.children SATISFIES child.age > 10  END;
+  WHERE ARRAY_LENGTH(children) > 0;
+  
+SELECT fname, email FROM tutorial USE KEYS ["dave", "ian"];
+SELECT children[0:2] FROM tutorial WHERE children[0:2] IS NOT MISSING;
+ORDER BY age LIMIT 10;
+SELECT relation, COUNT(*) AS count FROM tutorial GROUP BY relation HAVING COUNT(*) > 1;
+SELECT ARRAY child.fname FOR child IN tutorial.children END AS children_names FROM tutorial WHERE children IS NOT NULL;
+SELECT t.relation, COUNT(*) AS count, AVG(c.age) AS avg_age 
+  FROM tutorial t UNNEST t.children c
+  WHERE c.age > 10 GROUP BY t.relation HAVING COUNT(*) > 1 ORDER BY avg_age DESC LIMIT 1 OFFSET 1;
+
+
+
+
+
+<div dir='rtl'></div>
+<div dir='rtl'></div>
+<div dir='rtl'></div>
+<div dir='rtl'></div>
