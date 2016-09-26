@@ -1,5 +1,6 @@
 <div dir='rtl'>بنام خدا</div>
-```
+
+```sql
 SELECT * FROM tutorial WHERE fname = 'Ian';
 SELECT children[0].fname AS cname FROM tutorial WHERE fname='Dave';
 SELECT META(tutorial) AS meta FROM tutorial;
@@ -19,7 +20,7 @@ SELECT t.relation, COUNT(*) AS count, AVG(c.age) AS avg_age
 
 
 
-
+```
 
 <div dir='rtl'></div>
 <div dir='rtl'></div>
