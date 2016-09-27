@@ -29,7 +29,10 @@ INSERT INTO tutorial (KEY, VALUE) VALUES ("baldwin", {"name":"Alex Baldwin", "ty
 DELETE FROM tutorial t USE KEYS "baldwin" RETURNING t;
 DELETE FROM tutorial t WHERE t.title = “Mrs”;
 UPDATE tutorial USE KEYS "baldwin" SET type = "actor" RETURNING tutorial.type;
-
+SELECT T.BankCode, sum(to_number(B.Transfered_Credit))
+  FROM TestBank B JOIN TestBank T ON KEYS [B.From_Account]
+  WHERE T.Tag="Bank_Account_info" and b.Tag="Account_trx"
+  GROUP BY T.BankCode;
 
 
 
