@@ -11,7 +11,7 @@
        ```
     + 2-put Couchbase beside of Nginx
        
-       ```configuration
+       ```
          server {
            listen 38091 ssl;
            client_max_body_size 21m;                            
