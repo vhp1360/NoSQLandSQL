@@ -52,6 +52,10 @@
        bucket = Bucket('couchbases://IP/default?certpath=/Path/cert.pem',password='PortPasswod!')
        ```
        
+    + 4-IPTABLES issues:
+       ```
+       -A INPUT -p tcp -m tcp -m state --state NEW,RELATED,ESTABLISHED -m multiport --dports 8093,11207,11209:11211,11214,11215,18091,18092,4369,21100:21199 -j ACCEPT
+       ```
 
 
 <div dir="rtl"></div>
