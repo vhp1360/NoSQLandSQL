@@ -1,6 +1,6 @@
 <div dir="rtl">بنام خدا</div>
 
-<div dir="rtl">تغییر واترمارک</div><br/>
+<div dir="rtl">تغییر واترمارک</div>
 
 Change Water-Mark values
 
@@ -14,7 +14,7 @@ http://developer.couchbase.com/documentation/server/4.1/developer-guide/raw-appe
 
 Currently there is a hard limit of 10,000 concurrent key-value connections to any cluster node. This effectively means a limit of 10,000 SDK “Bucket” objects.
 
-1- create Index: `create primary index \`From_Account\` on \`ShomaraDB\` USING VIEW;`
+1- create Index: `create primary index \```From_Account``` on ```ShomaraDB``` USING VIEW;`
 2- View Sample: Bank Transaction, get report each Account who sender or receiver
 ```javascript
   function(meta,doc){
