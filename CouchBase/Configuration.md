@@ -35,15 +35,15 @@
 			}
 		```
 	3. SSL/TLS connection for SDKs
-		> Security|Root Certifies-> save certficate in client machine
+		+ 3.1.Security|Root Certifies-> save certficate in client machine
 		```python
-		from couchbase.bucket import Bucket
-		bucket = Bucket('couchbases://IP/default?certpath=/Path/cert.pem')
+			from couchbase.bucket import Bucket
+			bucket = Bucket('couchbases://IP/default?certpath=/Path/cert.pem')
 		```
-		> if you also have port password
+		+ 3.2.if you also have port password
 		```python
-		from couchbase.bucket import Bucket
-		bucket = Bucket('couchbases://IP/default?certpath=/Path/cert.pem',password='PortPasswod!')
+			from couchbase.bucket import Bucket
+			bucket = Bucket('couchbases://IP/default?certpath=/Path/cert.pem',password='PortPasswod!')
 		```
 	4. IPTABLES issues:
 		```
@@ -51,7 +51,7 @@
 			8093,11207,11209:11211,11214,11215,18091,18092,4369,21100:21199 -j ACCEPT
 		```
 	5. Retrive Certificate:
-		1. in None SSL:
+		+ 5.1.in None SSL:
 		```vala
 			curl –X GET  -u adminName:adminPassword http://localHost:Port/pools/default/certificate > ./<certificate_name>
 			for example:
@@ -59,7 +59,7 @@
 			or
 			wget http://10.5.2.54:8091/pools/default/certificate -O clusterCertificate
 		```
-		2. in SSL Mode:
+		+ 5.2.in SSL Mode:
 		```vala
 			curl --cacert clusterCertificate https://10.5.2.54:18091/pools/default
 			wget --ca-certificate clusterCertificate  https://10.5.2.54:18091/pools/default -O outpu
