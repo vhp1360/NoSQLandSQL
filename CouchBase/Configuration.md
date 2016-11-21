@@ -6,7 +6,6 @@
 		```python
 			from couchbase.bucket import Bucket
 			bucket = Bucket('couchbases://IP/default',password='BucketPassword')
-			bucket = Bucket('couchbases://IP/default?certpath=/Path to Cert/cert.pem',password='BucketPaasword')
 		```
 	2. put Couchbase beside of Nginx
 	```vala
