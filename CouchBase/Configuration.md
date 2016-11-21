@@ -5,11 +5,12 @@
 		1. in Python SDK for Connection
 		```python
 			from couchbase.bucket import Bucket
-			bucket = Bucket('couchbases://IP/default',password='PortPassword')
+			bucket = Bucket('couchbases://IP/default',password='BucketPassword')
+			bucket = Bucket('couchbases://IP/default?certpath=/Path to Cert/cert.pem',password='BucketPaasword')
 		```
 	2. put Couchbase beside of Nginx
-		```vala
-			server {
+	```vala
+		server {
 			listen 38091 ssl;
 			client_max_body_size 21m;                            
 			ssl_certificate /Path/nginx.crt;
@@ -20,20 +21,20 @@
 			ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
 			ssl_prefer_server_ciphers   on;
 			location / { #/couchbase/ {
-			proxy_pass http://localhost:8091; #couchbase_gateway;
-			#      rewrite ^/couchbase/(.*)$ /$1 break;
-			#      proxy_redirect http://localhost:8091/ $scheme://$host/couchbase/;
-			proxy_pass_header       Accept;
-			proxy_pass_header       Server;
-			proxy_http_version      1.1;
-			keepalive_requests      1000;
-			keepalive_timeout       360s;
-			proxy_read_timeout      360s;
-			proxy_set_header Upgrade $http_upgrade;
-			proxy_set_header Connection $connection_upgrade;
+				proxy_pass http://localhost:8091; #couchbase_gateway;
+				#      rewrite ^/couchbase/(.*)$ /$1 break;
+				#      proxy_redirect http://localhost:8091/ $scheme://$host/couchbase/;
+				proxy_pass_header       Accept;
+				proxy_pass_header       Server;
+				proxy_http_version      1.1;
+				keepalive_requests      1000;
+				keepalive_timeout       360s;
+				proxy_read_timeout      360s;
+				proxy_set_header Upgrade $http_upgrade;
+				proxy_set_header Connection $connection_upgrade;
 			}
-			}
-		```
+		}
+	```
 	3. SSL/TLS connection for SDKs
 		+ 3.1.Security|Root Certifies-> save certficate in client machine
 		```python
@@ -46,10 +47,10 @@
 			bucket = Bucket('couchbases://IP/default?certpath=/Path/cert.pem',password='PortPasswod!')
 		```
 	4. IPTABLES issues:
-		```
-			-A INPUT -p tcp -m tcp -m state --state NEW,RELATED,ESTABLISHED -m multiport --dports\
-			8093,11207,11209:11211,11214,11215,18091,18092,4369,21100:21199 -j ACCEPT
-		```
+	```
+	  -A INPUT -p tcp -m tcp -m state --state NEW,RELATED,ESTABLISHED -m multiport --dports\
+		8093,11207,11209:11211,11214,11215,18091,18092,4369,21100:21199 -j ACCEPT
+	```
 	5. Retrive Certificate:
 		+ 5.1.in None SSL:
 		```vala
