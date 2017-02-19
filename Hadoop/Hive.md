@@ -1,5 +1,6 @@
 <div dir="rtl">بنام خدا</div>
 Hive installation:
+
 1. [edureka Link](https://www.edureka.co/blog/apache-hive-installation-on-ubuntu) is good
 2. be careful on metastore issue:
   - Hive and metastore version consistency
