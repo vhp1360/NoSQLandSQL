@@ -37,6 +37,11 @@
 ```mysql
   mysql -u Name -p
 ```
+- list of DataBases or Schemas
+```sql
+  SHOW {DATABASES | SCHEMAS}
+```
+- 
 
 
 
