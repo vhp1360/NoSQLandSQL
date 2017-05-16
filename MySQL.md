@@ -28,24 +28,52 @@
       UPDATE mysql.user set password = PASSWORD('your_new_password') where user = 'root' and host = 'localhost';
       FLUSH PRIVILAGES;
       exit;
-   ```
+```
 
 
 [Top](#top)
 ### Some Codes
 - login :
-```d
+```vala
   mysql -u Name -p
 ```
-- list of DataBases or Schemas
+- MetaData:
+  1- DataBases, Schema,Tables
+  ```vala
+      SHOW {DATABASES | SCHEMAS | TABLES};
+      SHOW TABLES;
+  ```
+  2- Column Names
+  ```vala
+    DESCRIBE my_table;
+    SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'my_database' AND TABLE_NAME = 'my_table';
+  ```
+  3- 
+  
+- Use File:
 ```vala
-  SHOW {DATABASES | SCHEMAS}
+  mysql> source /Path/to/File
 ```
-- 
-
-
-
-
+- Create USER and Grant:
+```vala
+  mysql> CREATE USER 'UserName'@'localhost' IDENTIFIED BY 'Password';
+  mysql> GRANT ALL PRIVILEGES ON DatabaseName.* TO 'UserName'@'localhost' WITH GRANT OPTION;
+  FLUSH PRIVILEGES;
+```
+- Select
+  1- Top:
+  ```vala
+    Select * from TableName Limit No.  Offset No.;
+  ```
+  2- RowNumber:
+  ```vala
+    SELECT *   -- <-- pick any columns here from your table, if you wanna exclude the RowNumber
+    FROM (SELECT ROW_NUMBER OVER(ORDER BY ID DESC) RowNumber, * 
+          FROM Reflow  
+          WHERE ReflowProcessID = somenumber) t
+    WHERE RowNumber >= 20 AND RowNumber <= 40  
+  ```
+  3- 
 
 
 [Top](#top)
