@@ -4,7 +4,7 @@
 
 - [Installation](#installation)
 - [Password Recovery](#password-recovery)
-
+- [Some Codes](#some-codes)
 
 
 [Top](#top)
@@ -15,12 +15,13 @@
     may _aria\_log\_control_
     
 
-###### top
 
+[Top](#top)
 ### Password REcovery
 1- in /etc/my.cnf add `skip-grant-tables` line
 
-2- ```vim
+2- 
+```vim
       service mysqld restart
       mysql -u root
       use mysql
@@ -28,3 +29,18 @@
       FLUSH PRIVILAGES;
       exit;
    ```
+
+
+[Top](#top)
+### Some Codes
+- login :
+```sql
+  mysql -u Name -p
+```
+
+
+
+
+
+
+[Top](#top)
