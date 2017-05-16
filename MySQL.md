@@ -34,11 +34,11 @@
 [Top](#top)
 ### Some Codes
 - login :
-```mysql
+```d
   mysql -u Name -p
 ```
 - list of DataBases or Schemas
-```sql
+```vala
   SHOW {DATABASES | SCHEMAS}
 ```
 - 
