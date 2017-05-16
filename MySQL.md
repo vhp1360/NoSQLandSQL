@@ -34,7 +34,7 @@
 [Top](#top)
 ### Some Codes
 - login :
-```sql
+```mysql
   mysql -u Name -p
 ```
 
