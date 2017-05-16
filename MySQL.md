@@ -38,6 +38,7 @@
   mysql -u Name -p
 ```
 - MetaData:
+
   1- DataBases, Schema,Tables
   ```vala
       SHOW {DATABASES | SCHEMAS | TABLES};
@@ -61,6 +62,7 @@
   FLUSH PRIVILEGES;
 ```
 - Select
+
   1- Top:
   ```vala
     Select * from TableName Limit No.  Offset No.;
