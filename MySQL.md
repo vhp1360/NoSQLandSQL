@@ -49,8 +49,20 @@
     DESCRIBE my_table;
     SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'my_database' AND TABLE_NAME = 'my_table';
   ```
-  3- 
-  
+  3- Find Keys:
+  ```vala
+    SELECT
+        CONCAT(table_name, '.', column_name) AS 'foreign key',
+        CONCAT(referenced_table_name, '.', referenced_column_name) AS 'references',
+        constraint_name AS 'constraint name'
+    FROM
+        information_schema.key_column_usage
+    WHERE
+        referenced_table_name IS NOT NULL;
+  ```
+4- 
+
+
 - Use File:
 ```vala
   mysql> source /Path/to/File
@@ -58,6 +70,8 @@
 - Create USER and Grant:
 ```vala
   mysql> CREATE USER 'UserName'@'localhost' IDENTIFIED BY 'Password';
+  mysql> CREATE USER 'UserName'@'IP' IDENTIFIED BY 'Password';
+  mysql> CREATE USER 'UserName'@'%' IDENTIFIED BY 'Password';
   mysql> GRANT ALL PRIVILEGES ON DatabaseName.* TO 'UserName'@'localhost' WITH GRANT OPTION;
   FLUSH PRIVILEGES;
 ```
@@ -75,7 +89,8 @@
           WHERE ReflowProcessID = somenumber) t
     WHERE RowNumber >= 20 AND RowNumber <= 40  
   ```
-  3- 
-
-
+  3- Join:
+  ```vala
+    Select ... From T1 [any Type of] Join (T2,..,Tn) ON T1...=T2... And T1...=....
+  ```
 [Top](#top)
