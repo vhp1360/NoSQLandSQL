@@ -8,17 +8,17 @@
 ### Keyspace
 - Create:
 ```vala
-  CREATE KEYSPACE Excelsior WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 3};
-  CREATE KEYSPACE Excalibur WITH replication = {'class': 'NetworkTopologyStrategy', 'DC1' : 1, 'DC2' : 3}
+  CREATE KEYSPACE KetSpaceName WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 3};
+  CREATE KEYSPACE KetSpaceName WITH replication = {'class': 'NetworkTopologyStrategy', 'DC1' : 1, 'DC2' : 3}
             AND durable_writes = false;
 ```
 - Alter:
 ```vala
-  ALTER KEYSPACE Excelsior WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 4};
+  ALTER KEYSPACE KetSpaceName WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 4};
 ```
 - Drop:
 ```vala
-  CDROP KEYSPACE Excelsior;
+  CDROP KEYSPACE KetSpaceName;
 ```
 - Qury:
 ```vala
@@ -53,7 +53,7 @@
   ```
   2. Example:
   ```vala
-    CREATE TABLE monkeySpecies (
+    CREATE TABLE TableName (
         species text PRIMARY KEY,
         common_name text,
         population varint,
