@@ -20,6 +20,11 @@
 ```vala
   CDROP KEYSPACE Excelsior;
 ```
+- Qury:
+```vala
+  DESCRIBE keyspaces;
+```
+  
 ### Table
 - Create
   1. synopsis
