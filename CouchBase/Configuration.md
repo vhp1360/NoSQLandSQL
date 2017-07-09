@@ -64,7 +64,15 @@
 			curl --cacert clusterCertificate https://10.5.2.54:18091/pools/default
 			wget --ca-certificate clusterCertificate  https://10.5.2.54:18091/pools/default -O outpu
 		```
-
+- Reset Password:
+```vim
+  ./erl -noinput -eval 'case file:read_file("/opt/couchbase/var/lib/couchbase/config/config.dat") of {ok, B} -> io:format("~p~n", [binary_to_term(B)]) end.' -run init stop | grep cred
+```
+  - the result like:
+  ```json
+    {rest_creds,
+    {creds,[{"a",[{password,"passwd"}]}]}]},
+  ```
 <div dir="rtl"></div>
 <div dir="rtl"></div>
 <div dir="rtl"></div>
