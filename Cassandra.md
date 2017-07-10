@@ -64,6 +64,8 @@
        AND compaction = { 'class' : 'LeveledCompactionStrategy' }
        AND CLUSTERING ORDER BY (mtime DESC);
 ```
+3. Some types:
+  _text_,_varchar_,_int_,_tinyint_,bigint_,
 
    
    
