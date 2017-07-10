@@ -24,7 +24,11 @@
 ```vala
   DESCRIBE keyspaces;
 ```
-  
+- Activation:
+```vala
+  use KeySpace
+```
+
 ### Table
 - Create
   1. synopsis
