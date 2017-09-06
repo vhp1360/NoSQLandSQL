@@ -3,12 +3,12 @@
 1- Totlay:
 ```bash
   createdb testdb
-  psql testdb
-  psql -U [username]
+  sql testdb
+  sql -U [username]
 ```  
 
 2-DB
-```psql
+```sql
   \help <command_name>
   \c database_name; -> Change DataBase
   \l -> List All DataBases
@@ -22,7 +22,7 @@
   DROP DATABASE DBName;
 ```
 3-Table
-```psql
+```sql
   CREATE [TEMP] TABLE [IF NOT EXISTS] table_name(
     pk SERIAL PRIMARY KEY,
     c1 type(size) NOT NULL,
@@ -40,7 +40,7 @@
   DROP TABLE [IF EXISTS] table_name CASCADE;
 ```
 4- View
-```psql
+```sql
   CREATE OR REPLACE view_name AS query;
   CREATE RECURSIVE VIEW view_name(columns) AS SELECT columns;
   CREATE MATERIALIZED VIEW view_name AS query WITH [NO] DATA;
@@ -48,12 +48,12 @@
   ALTER VIEW view_name RENAME TO new_name;
 ```
 5- Index
-```psql
+```sql
   CREATE [UNIQUE] INDEX index_name ON table (column,...);
   DROP INDEX index_name;
 ```
 6- Query
-```psql
+```sql
   SELECT * FROM table_name WHERE column IN (value1, value2,...) LIMIT limit OFFSET offset ORDER BY column_name;
   SELECT * FROM table1 {INNER,LEFT,FULL[ OUTER],CROSS,NATURAL} JOIN table2 ON conditions;
   SELECT * FROM table1 {UNION,EXCEPT,INTERSECT} SELECT * FROM table2;
