@@ -20,7 +20,7 @@
   CREATE ROLE NOINHERIT LOGIN PASSWORD Passwoed;
   CREATE DATABASE [IF NOT EXISTS] DBName;
   DROP DATABASE DBName;
-  GRANT ALL ON DBName TO {RoleName,UserName};
+  GRANT ALL ON DBName TO {RoleName,UserName}
   
 ```
 3-Table
