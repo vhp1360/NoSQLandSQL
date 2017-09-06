@@ -1,7 +1,7 @@
 <div dir=rtl>بنام خدا</div>
 
 1- Totlay:
-```bash
+```sh
   createdb testdb
   sql testdb
   sql -U [username]
