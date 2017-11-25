@@ -5,11 +5,11 @@
 - [Installation](#installation)
 - [Password Recovery](#password-recovery)
 - [Some Codes](#some-codes)
-    - [Login](#login-)
-    - [MetaData](#metadata-)
-    - [Use File](#use-file-)
-    - [Create USER and Grant](#create-user-and-grant-)
-    - [SELECT](#select-)
+    - [Login](#login)
+    - [MetaData](#metadata)
+    - [Use File](#use-file)
+    - [Create USER and Grant](#create-user-and-grant)
+    - [SELECT](#select)
 
 
 [Top](#top)
@@ -38,7 +38,7 @@
 
 [Top](#top)
 ### Some Codes
-- ###### login :
+- ###### login:
 ```vala
   mysql -u Name -p
 ```
@@ -49,7 +49,7 @@
       SHOW {DATABASES | SCHEMAS | TABLES};
       SHOW TABLES;
   ```
-  2- Column Names
+  2- Column Names:
   ```vala
     DESCRIBE my_table;
     SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'my_database' AND TABLE_NAME = 'my_table';
@@ -80,7 +80,7 @@
   mysql> GRANT ALL PRIVILEGES ON DatabaseName.* TO 'UserName'@'localhost' WITH GRANT OPTION;
   FLUSH PRIVILEGES;
 ```
-- ###### Select
+- ###### Select:
 
   1- Top:
   ```vala
