@@ -5,7 +5,7 @@
 - [Installation](#installation)
 - [Password Recovery](#password-recovery)
 - [Some Codes](#some-codes)
-    - [Login](#login)
+    - [Login](login)
     - [MetaData](#metadata)
     - [Use File](#use-file)
     - [Create USER and Grant](#create-user-and-grant)
