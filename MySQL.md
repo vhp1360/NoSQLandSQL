@@ -22,17 +22,17 @@
 
 
 [Top](#top)
-### Password REcovery
+### Password Recovery
 1- in /etc/my.cnf add `skip-grant-tables` line
 
 2- 
 ```vim
-      service mysqld restart
-      mysql -u root
-      use mysql
-      UPDATE mysql.user set password = PASSWORD('your_new_password') where user = 'root' and host = 'localhost';
-      FLUSH PRIVILAGES;
-      exit;
+	service mysqld restart
+	mysql -u root
+	mysql> use mysql
+	mysql> UPDATE mysql.user set password = PASSWORD('your_new_password') where user = 'root' and host = 'localhost';
+	mysql> FLUSH PRIVILAGES;
+	mysql> exit;
 ```
 
 
@@ -40,23 +40,28 @@
 ### Some Codes
 - ###### login:
 ```vala
-  mysql -u Name -p
+	mysql -u Name -p
 ```
 - ###### MetaData:
 
   1- DataBases, Schema,Tables
   ```vala
-      SHOW {DATABASES | SCHEMAS | TABLES};
-      SHOW TABLES;
+		mysql> \u DataBaseName;
+		mysql> ALTER DATABASE dbname CHARACTER SET utf8 COLLATE utf8_general_ci;
+		mysql> ALTER TABLE tablename CHARACTER SET utf8 COLLATE utf8_general_ci;
+		mysql> ALTER TABLE `db_table_name` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+		mysql> SHOW {DATABASES | SCHEMAS | TABLES};
+		mysql> SHOW TABLES;
   ```
-  2- Column Names:
+  2- Column:
   ```vala
-    DESCRIBE my_table;
-    SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'my_database' AND TABLE_NAME = 'my_table';
+    mysql> DESCRIBE my_table;
+    mysql> SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'my_database' AND TABLE_NAME = 'my_table';
+    mysql> ALter TAble TablaName Modify Column ColumnName1 ..., Modify Column ColumnName ...  
   ```
   3- Find Keys:
   ```vala
-    SELECT
+    mysql> SELECT
         CONCAT(table_name, '.', column_name) AS 'foreign key',
         CONCAT(referenced_table_name, '.', referenced_column_name) AS 'references',
         constraint_name AS 'constraint name'
@@ -71,6 +76,8 @@
 - ###### Use File:
 ```vala
   mysql> source /Path/to/File
+  mysql> load data local infile '/Path/to/File.csv' into table TableName Fields Terminated by ',' Enclosed by '"' \
+					Line Terminated by '\n' Ignore No. Lines (ColName1,ColName2,...)
 ```
 - ###### Create USER and Grant:
 ```vala
