@@ -77,7 +77,7 @@
 ```vala
   mysql> source /Path/to/File
   mysql> load data local infile '/Path/to/File.csv' into table TableName Fields Terminated by ',' Enclosed by '"' \
-					Line Terminated by '\n' Ignore No. Lines (ColName1,ColName2,...)
+  	  Line Terminated by '\n' Ignore No. Lines (ColName1,ColName2,...)
 ```
 - ###### Create USER and Grant:
 ```vala
