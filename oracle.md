@@ -31,12 +31,12 @@ it's simple:
   - if you would export many row more than your _RAM_ then you need break down to multiple csv file, 
       then sould use cmd command in windows
   ```vala
-      @echo off
-      set NLS_LANG=AMERICAN_AMERICA.AL32UTF8
-      for /L %%i in (1,1,No) do (
-        Set /a b=%%i*1000000  <-- for example
-        call sqlplus User/Pass@TnsName @d:\Sql.sql %%b%%
-      )
-      pause
-    ```
+    @echo off
+    set NLS_LANG=AMERICAN_AMERICA.AL32UTF8
+    for /L %%i in (1,1,No) do (
+      Set /a b=%%i*1000000  <-- for example
+      call sqlplus User/Pass@TnsName @d:\Sql.sql %%b%%
+    )
+    pause
+  ```
 
