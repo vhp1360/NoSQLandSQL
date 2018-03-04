@@ -43,5 +43,8 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
   CREATE TABLE TableName (...) row format delimited fields terminated by ',';
   LOAD DATA LOCAL INPATH '/home/yourcsvfile.csv' OVERWRITE INTO TABLE TableName;
 ```
+  - in loading for Int column I faced Null in first record Result, for this use [tblproperties ("skip.header.line.count"="1")](https://stackoverflow.com/questions/43631472/how-i-avoid-the-null-in-the-first-field-name-of-hive-table)
+  - to show column name in query: `hive>set hive.cli.print.header=true;`
+  
 
 [top](#top)
