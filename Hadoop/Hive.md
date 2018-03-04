@@ -1,4 +1,6 @@
 <div dir="rtl">بنام خدا</div>
+
+
 Hive installation:
 
 1. [edureka Link](https://www.edureka.co/blog/apache-hive-installation-on-ubuntu) is good
@@ -9,3 +11,67 @@ Hive installation:
   - still you need `hive-site.xml` file
   - be care to where _derby.db_ file and _metastore\_db_ drive crreate
 3. the log file will stored in /tmp/UserName/hive.log
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[top](#top)
