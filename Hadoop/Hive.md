@@ -5,6 +5,7 @@
   - [Install with MySQL](#install-with-mysql)
   
 -[Loading Csv](#loading-csv)
+-[Tips](#tips)
 
 # Hive installation:
 
@@ -18,6 +19,11 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
 - if you faced _FAILED: SemanticException org.apache.hadoop.hive.ql.metadata.HiveException: \
     java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient_ \
     by running `show tables;` To fix that `rm -Rf metastore_db` also [find this guid](https://stackoverflow.com/questions/43947930/unable-to-initialize-hive-with-derby-from-brew-install)
+- to run it as service:
+```vala
+  nohup startNetworkServer -h 0.0.0.0 > /var/log/derby.log & 
+  nohup /Path/2/hive/bin/hive --service hiveserver2 &
+```
 
 ### Install with MySQL
 1. [edureka Link](https://www.edureka.co/blog/apache-hive-installation-on-ubuntu) is good
@@ -48,3 +54,22 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
   
 
 [top](#top)
+# Tips
+- if you encountered that _User1 could not impersonated User2_ from __Hive__ then
+  1- change _false_ to _true_ for _ _ property in _hive-site.xml_ file.
+  2- add below in _core-site.xml_ in your hadoop:
+  ```vala
+    <property>
+         <name>hadoop.proxyuser.server.hosts</name> 
+         <value>*</value> 
+    </property> 
+    <property>
+         <name>hadoop.proxyuser.server.groups</name>
+         <value>*</value>
+    </property>
+  ```
+- I faced _java.lang.RuntimeException:Unable to instantiate org.apache.hadoop.hive.metastore.HiveMetaStoreClient_ error and the solution [is](https://stackoverflow.com/questions/22711364/java-lang-runtimeexceptionunable-to-instantiate-org-apache-hadoop-hive-metastor) `rm   metastore_db/*.lck`
+
+
+[top](#top)
+
