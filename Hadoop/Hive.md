@@ -5,6 +5,7 @@
   - [Install with MySQL](#install-with-mysql)
   
 -[Loading Csv](#loading-csv)
+
 -[Tips](#tips)
 
 # Hive installation:
