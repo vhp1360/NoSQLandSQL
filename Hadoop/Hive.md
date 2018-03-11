@@ -1,12 +1,10 @@
 <div dir="rtl">بنام خدا</div>
 
--[Hive installation](#hive-installation)
+- [Hive installation](#hive-installation)
   - [Install with Derby](#install-with-derby)
   - [Install with MySQL](#install-with-mysql)
-  
--[Loading Csv](#loading-csv)
-
--[Tips](#tips)
+- [Loading Csv](#loading-csv)
+- [Tips](#tips)
 
 # Hive installation:
 
@@ -23,7 +21,7 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
 - to run it as service:
 ```vala
   nohup startNetworkServer -h 0.0.0.0 > /var/log/derby.log & 
-  nohup /Path/2/hive/bin/hive --service hiveserver2 &
+  nohup /Path/2/hive/bin/hive --service hiveserver2 > /var/log/hiveserver2.log &
 ```
 
 ### Install with MySQL
@@ -56,10 +54,19 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
 
 [top](#top)
 # Tips
+##### First: 
+hive log return is awful, there is a web gui with hiveserver2 on 10002 port.
+##### Second:
+hive could run on top of some kind of engine:
+  - mapreduce
+  - spark
+  - ant
+  - tez : this is hadoop suggestion.
+  
 - if you encountered that _User1 could not impersonated User2_ from __Hive__ then
-  1- change _false_ to _true_ for _ _ property in _hive-site.xml_ file.
+  1- change _false_ to _true_ for _hive.metastore.sasl.enabled_ property in _hive-site.xml_ file.
   2- add below in _core-site.xml_ in your hadoop:
-  ```vala
+  ```xml
     <property>
          <name>hadoop.proxyuser.server.hosts</name> 
          <value>*</value> 
@@ -69,8 +76,16 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
          <value>*</value>
     </property>
   ```
-- I faced _java.lang.RuntimeException:Unable to instantiate org.apache.hadoop.hive.metastore.HiveMetaStoreClient_ error and the solution [is](https://stackoverflow.com/questions/22711364/java-lang-runtimeexceptionunable-to-instantiate-org-apache-hadoop-hive-metastor) `rm   metastore_db/*.lck`
-
-
+- In _java.lang.RuntimeException:Unable to instantiate org.apache.hadoop.hive.metastore.HiveMetaStoreClient_ error and the solution [is](https://stackoverflow.com/questions/22711364/java-lang-runtimeexceptionunable-to-instantiate-org-apache-hadoop-hive-metastor) `rm   metastore_db/*.lck`
+- in complicated queries I faced _FAILED: Execution Error, return code 2 from org.apache.hadoop.hive.ql.exec.mr.MapRedTask_ error, for that:
+  1- added [this config in hadoop](https://github.com/vhp1360/NoSQLandSQL/blob/master/Hadoop/hdfs.md#1-mapred-sitexml)
+  2- set `hive.exec.reducers.bytes.per.reducer` value in hive-site.xml to _1000000_ .
+  3- finally below configs solved my problem:
+  ```vala
+    set mapred.reduce.tasks=50;
+    set mapred.map.tasks=50;
+  ```
+  
+- [_5 WAYS TO MAKE YOUR HIVE QUERIES RUN FASTE_](https://hortonworks.com/blog/5-ways-make-hive-queries-run-faster/) is useful documnet.
 [top](#top)
 
