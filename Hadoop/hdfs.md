@@ -14,7 +14,7 @@
   - that should be same with the same file in hadoop/tmp file which defined in _core-site.xml_ file.
   - the owner of hadoop should be able to _ssh passwordLess_ to __localhost__ .
   - I was needed to add below properties in config files due hive problems.
-    ###### 1. mapred-site.xml:
+    ###### i. mapred-site.xml:
     ```xml
       <property>
         <name>mapred.reduce.tasks</name>
@@ -37,5 +37,13 @@
               <value>-Xmx2048M</value>
       </property>
     ```
+    2. to increase mapred heap size:
+    ```xml
+      <property>
+          <name>mapred.child.java.opts</name>
+          <value>-Xmx4096m</value>
+      </property>
+    ```
+
 
 [top](#top)
