@@ -19,8 +19,8 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
 - if you faced _FAILED: SemanticException org.apache.hadoop.hive.ql.metadata.HiveException: \
     java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient_ \
     by running `show tables;` To fix that `rm -Rf metastore_db` also [find this guid](https://stackoverflow.com/questions/43947930/unable-to-initialize-hive-with-derby-from-brew-install)
-- to run it as service:
-```vala
+###### - to run it as service:
+ ```vala
   nohup startNetworkServer -h 0.0.0.0 > /var/log/derby.log & 
   nohup /Path/2/hive/bin/hive --service hiveserver2 > /var/log/hiveserver2.log &
 ```
@@ -93,6 +93,7 @@ hive could run on top of some kind of engine:
     </property>
   ```
 - In _java.lang.RuntimeException:Unable to instantiate org.apache.hadoop.hive.metastore.HiveMetaStoreClient_ error and the solution [is](https://stackoverflow.com/questions/22711364/java-lang-runtimeexceptionunable-to-instantiate-org-apache-hadoop-hive-metastor) `rm   metastore_db/*.lck`
+  - in this case you should first stop services, delete issues [then run it](to-run-it-as-service)
 - in complicated queries I faced _FAILED: Execution Error, return code 2 from org.apache.hadoop.hive.ql.exec.mr.MapRedTask_ error, for that:
   1- added [this config in hadoop](https://github.com/vhp1360/NoSQLandSQL/blob/master/Hadoop/hdfs.md#1-mapred-sitexml)
   2- set `hive.exec.reducers.bytes.per.reducer` value in hive-site.xml to _1000000_ .
