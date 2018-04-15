@@ -93,11 +93,11 @@ hive could run on top of some kind of engine:
     </property>
   ```
 - In _java.lang.RuntimeException:Unable to instantiate org.apache.hadoop.hive.metastore.HiveMetaStoreClient_ error and the solution [is](https://stackoverflow.com/questions/22711364/java-lang-runtimeexceptionunable-to-instantiate-org-apache-hadoop-hive-metastor) `rm   metastore_db/*.lck`
-  - in this case you should first stop services, delete issues [then run it](--to-run-it-as-service)
+  - in this case you should first stop services, delete issues [then run it](#--to-run-it-as-service)
 - in complicated queries I faced _FAILED: Execution Error, return code 2 from org.apache.hadoop.hive.ql.exec.mr.MapRedTask_ error, for that:
-  1- added [this config in hadoop](https://github.com/vhp1360/NoSQLandSQL/blob/master/Hadoop/hdfs.md#1-mapred-sitexml)
-  2- set `hive.exec.reducers.bytes.per.reducer` value in hive-site.xml to _1000000_ .
-  3- [finally](https://stackoverflow.com/questions/8762064/hive-unable-to-manually-set-number-of-reducers) below configs solved my problem:
+  1. added [this config in hadoop](https://github.com/vhp1360/NoSQLandSQL/blob/master/Hadoop/hdfs.md#1-mapred-sitexml)
+  2. set `hive.exec.reducers.bytes.per.reducer` value in hive-site.xml to _1000000_ .
+  3. [finally](https://stackoverflow.com/questions/8762064/hive-unable-to-manually-set-number-of-reducers) below configs solved my problem:
   ```vala
     set mapred.reduce.tasks=50;
     set mapred.map.tasks=50;
