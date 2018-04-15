@@ -53,6 +53,7 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
   
 
 [top](#top)
+
 # Tips
 ##### First: 
 hive log return is awful, there is a web gui with hiveserver2 on 10002 port.
@@ -87,5 +88,6 @@ hive could run on top of some kind of engine:
   ```
   
 - [_5 WAYS TO MAKE YOUR HIVE QUERIES RUN FASTE_](https://hortonworks.com/blog/5-ways-make-hive-queries-run-faster/) is useful documnet.
+
 [top](#top)
 
