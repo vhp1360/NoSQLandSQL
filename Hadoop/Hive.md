@@ -4,6 +4,7 @@
   - [Install with Derby](#install-with-derby)
   - [Install with MySQL](#install-with-mysql)
 - [Loading Csv](#loading-csv)
+- [Sql Commands](#sql-commands)
 - [Tips](#tips)
 
 # Hive installation:
@@ -51,6 +52,20 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
   - in loading for Int column I faced Null in first record Result, for this use [tblproperties ("skip.header.line.count"="1")](https://stackoverflow.com/questions/43631472/how-i-avoid-the-null-in-the-first-field-name-of-hive-table)
   - to show column name in query: `hive>set hive.cli.print.header=true;`
   
+
+[top](#top)
+
+# Sql Commands
+- Meta Data:
+```sql
+  show tables;
+  alter table TblName rename to NewName;
+  
+```
+- Query:
+```sql
+
+```
 
 [top](#top)
 
