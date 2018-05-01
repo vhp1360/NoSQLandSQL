@@ -18,7 +18,7 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
 ```
 - if you faced _FAILED: SemanticException org.apache.hadoop.hive.ql.metadata.HiveException: \
     java.lang.RuntimeException: Unable to instantiate org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient_ \
-    by running `show tables;` To fix that `rm -Rf metastore_db` also [find this guid](https://stackoverflow.com/questions/43947930/unable-to-initialize-hive-with-derby-from-brew-install)
+    by running `show tables;` To fix that `rm -Rf metastore_db` also [find this guidance](https://stackoverflow.com/questions/43947930/unable-to-initialize-hive-with-derby-from-brew-install)
 ###### - to run it as service:
  ```vala
   nohup startNetworkServer -h 0.0.0.0 > /var/log/derby.log & 
