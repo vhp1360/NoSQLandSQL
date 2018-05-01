@@ -1,7 +1,7 @@
 <div dir="rtl">بنام خدا</div>
 
--[Installation Tips](#installation-tips)
-
+- [Installation Tips](#installation-tips)
+- [Tips](#tips)
 
 
 # Installation Tips
@@ -47,3 +47,17 @@
 
 
 [top](#top)
+
+# Tips
+#### java.io.IOException: All directories in dfs.datanode.data.dir are invalid:
+actually when I faced this error because I changed my hadoop version, according [this](https://stackoverflow.com/a/45094804/3214950) problem solved.
+
+
+
+[top](#top)
+
+
+
+
+
+
