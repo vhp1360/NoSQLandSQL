@@ -70,14 +70,21 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
 [top](#top)
 
 # Tips
-##### First: 
+## First: 
 hive log return is awful, there is a web gui with hiveserver2 on 10002 port.
-##### Second:
+## Second:
 hive could run on top of some kind of engine:
-  - mapreduce
-  - spark
-  - ant
-  - tez : this is hadoop suggestion.
+  - [mapreduce](#mapreduce)
+  - [spark](#spark)
+  - [ant](#ant)
+  - [tez](#tez) : this is hadoop suggestion.
+#### mapreduce
+
+#### spark
+[this guidance](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Spark%3A+Getting+Started) from apache useful
+- __upload all jars in $SPARK_HOME/jars to hdfs folder__ :
+```hdfs
+  
   
 - if you encountered that _User1 could not impersonated User2_ from __Hive__ then
   1- change _false_ to _true_ for _hive.metastore.sasl.enabled_ property in _hive-site.xml_ file.
