@@ -2,7 +2,7 @@
 
 - [Installation Tips](#installation-tips)
 - [Commands](#commands)
-  - [Create Write Read Delete File and Directory](create-write-read-delete-file-and-directory)
+  - [Create Write Read Delete File and Directory](#create-write-read-delete-file-and-directory)
 - [Tips](#tips)
 
 
