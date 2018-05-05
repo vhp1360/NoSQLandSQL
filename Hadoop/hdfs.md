@@ -48,7 +48,7 @@
     ```
 # Create Write Read Delete File and Directory
 ### Copy from local and vise versa
-```vala
+```vim
   hadoop fs -put localPath hdfsPath
   hadoop fs -copyFromLocal localPath hdfsPath
   hadoop fs -get hdfsPath localPath
@@ -64,7 +64,6 @@ actually when I faced this error because I changed my hadoop version, according 
 
 
 [top](#top)
-
 
 
 
