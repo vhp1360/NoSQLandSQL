@@ -1,6 +1,7 @@
 <div dir="rtl">بنام خدا</div>
 
 - [Installation Tips](#installation-tips)
+  - [find Configuration](#find-configuration)
 - [Commands](#commands)
   - [Create Write Read Delete File and Directory](#create-write-read-delete-file-and-directory)
 - [Tips](#tips)
@@ -46,6 +47,11 @@
           <value>-Xmx4096m</value>
       </property>
     ```
+### find configuration
+```vim
+  hdfs getconf -confKey fs.defaultFS
+```
+
 # Create Write Read Delete File and Directory
 ### Copy from local and vise versa
 ```vim
@@ -53,6 +59,7 @@
   hadoop fs -copyFromLocal localPath hdfsPath
   hadoop fs -get hdfsPath localPath
 ```
+
 
 
 [top](#top)
