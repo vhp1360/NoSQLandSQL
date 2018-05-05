@@ -1,6 +1,8 @@
 <div dir="rtl">بنام خدا</div>
 
 - [Installation Tips](#installation-tips)
+- [Commands](#commands)
+  - [Create Write Read Delete File and Directory](create-write-read-delete-file-and-directory)
 - [Tips](#tips)
 
 
@@ -44,6 +46,13 @@
           <value>-Xmx4096m</value>
       </property>
     ```
+# Create Write Read Delete File and Directory
+### Copy from local and vise versa
+```vala
+  hadoop fs -put localPath hdfsPath
+  hadoop fs -copyFromLocal localPath hdfsPath
+  hadoop fs -get hdfsPath localPath
+```
 
 
 [top](#top)
