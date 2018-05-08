@@ -2,11 +2,15 @@
 
 - [Installation Tips](#installation-tips)
   - [find Configuration](#find-configuration)
-- [Commands](#commands)
+- [Users And Groups](#users-and-groups)
+  - [Create user And Group](#creat-user-and-group)
+  - [Set Permissions](#set-permissions)
+- [Files And Directories](#files-and-directories)
   - [Create Write Read Delete File and Directory](#create-write-read-delete-file-and-directory)
 - [Tips](#tips)
 
 
+[top](#top)
 # Installation Tips
 1- [this Link](https://www.tutorialspoint.com/hadoop/hadoop_multi_node_cluster.htm) and [this](https://linode.com/docs/databases/hadoop/how-to-install-and-set-up-hadoop-cluster/) are useful
 2- be care on `chown user:group /hadoopName&Data Node Path` , which user will run hadoop command.
@@ -52,7 +56,49 @@
   hdfs getconf -confKey fs.defaultFS
 ```
 
-# Create Write Read Delete File and Directory
+[top](#top)
+# Users And Groups
+## Create user And Group
+there is not any way to define to create user or group in hadoop till v.3, it used OS user and group.
+only is below statement may use in _core-site.xml_ file:
+```xml
+    <property>
+      <name>hadoop.proxyuser.hive.hosts</name>
+      <value>*</value>
+    </property>
+    <property>
+    <name>hadoop.proxyuser.hive.groups</name>
+    <value>*</value>
+    </property>
+```
+
+## Set Permissions
+- consider below commands:
+```vala
+  hadoop fs -chown -R UserName:GroupName /Path/in/Hadoop/hdfs
+  hadoop fs -chmod -R ...
+```
+  . please be aware for these properties:
+    - first foe __core-site.xml__:
+    ```xml
+      <property>
+        <name>dfs.permissions.enabled</name>
+        <value>true</value>
+      </property>
+    ```
+    - next for __hdfs-site.xml__:
+    ```xml
+      <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/tmp/hadoop-$(user.name)</value>
+      </property>
+    ```
+
+
+
+[top](#top)
+# Files And Directories
+## Create Write Read Delete File and Directory
 ### Copy from local and vise versa
 ```vim
   hadoop fs -put localPath hdfsPath
@@ -63,7 +109,6 @@
 
 
 [top](#top)
-
 # Tips
 #### java.io.IOException: All directories in dfs.datanode.data.dir are invalid:
 actually when I faced this error because I changed my hadoop version, according [this](https://stackoverflow.com/a/45094804/3214950) problem solved.
