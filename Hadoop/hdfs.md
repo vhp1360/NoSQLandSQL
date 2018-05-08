@@ -72,7 +72,7 @@ only is below statement may use in _core-site.xml_ file:
     </property>
 ```
 
-## Set Permissions
+## [Set Permissions](https://hadoop.apache.org/docs/r2.7.1/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html)
 - consider below commands:
 ```vala
   hadoop fs -chown -R UserName:GroupName /Path/in/Hadoop/hdfs
