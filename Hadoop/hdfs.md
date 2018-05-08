@@ -78,7 +78,7 @@ only is below statement may use in _core-site.xml_ file:
   hadoop fs -chown -R UserName:GroupName /Path/in/Hadoop/hdfs
   hadoop fs -chmod -R ...
 ```
-  . please be aware for these properties:
+  - please be aware for these properties:
     - first foe __core-site.xml__:
     ```xml
       <property>
