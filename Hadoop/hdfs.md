@@ -5,8 +5,12 @@
 - [Users And Groups](#users-and-groups)
   - [Create user And Group](#creat-user-and-group)
   - [Set Permissions](#set-permissions)
-- [Files And Directories](#files-and-directories)
-  - [Create Write Read Delete File and Directory](#create-write-read-delete-file-and-directory)
+- [Files And Directories Commands](#files-and-directories-commands)
+  - [Create](#create)
+  - [Delete](#delete)
+  - [Read and Write](#read-and-write)
+  - [Browse](#browse)
+  - [Permissions](#permissions)
 - [Tips](#tips)
 
 
@@ -52,7 +56,7 @@
       </property>
     ```
 ### find configuration
-```vim
+```vala
   hdfs getconf -confKey fs.defaultFS
 ```
 
@@ -72,11 +76,43 @@ only is below statement may use in _core-site.xml_ file:
     </property>
 ```
 
-## [Set Permissions](https://hadoop.apache.org/docs/r2.7.1/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html)
-- consider below commands:
+[top](#top)
+# [Files And Directories Commands](#https://data-flair.training/blogs/top-hadoop-hdfs-commands-tutorial/)
+## Create
+### Create Folder
 ```vala
-  hadoop fs -chown -R UserName:GroupName /Path/in/Hadoop/hdfs
-  hadoop fs -chmod -R ...
+  hdfs dfs -mkdir ...
+```
+## Delete
+```vala
+  hdfs dfs -rm [-r] ...
+  hdfs dfs -expunge   # empty trash
+```
+##  Read and Write
+### Copy from local and vise versa
+```vala
+  hdfs dfs -put|copyFromLocal|moveFromLocal localPath hdfsPath
+  hdfs fs -get[merge]|copyTo|moveTo hdfsPath localPath
+```
+### Read
+```vala
+  hdfs dfs -cat|tail [-f]| ...
+```
+## Browse
+### Browse
+```vala
+  hdfs dfs -ls [-R] ...
+  hdfs dfs -mv|cp ... ...
+```
+
+## [Permissions](https://hadoop.apache.org/docs/r2.7.1/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html)
+- consider below commands:
+- it has all linux Permission's commands:
+```vala
+  hdfs dfs -chown|chmod|chgrp [-R] UserName:GroupName ...
+  hdfs dfs -setfacl [Optrions One by One] u|g:Name|:Permission ...
+  hdfs dfs -getfacl ...
+  hdfs dfs -getfattr
 ```
   - please be aware for these properties:
     - first foe __core-site.xml__:
@@ -93,20 +129,6 @@ only is below statement may use in _core-site.xml_ file:
         <value>/tmp/hadoop-$(user.name)</value>
       </property>
     ```
-
-
-
-[top](#top)
-# Files And Directories
-## Create Write Read Delete File and Directory
-### Copy from local and vise versa
-```vim
-  hadoop fs -put localPath hdfsPath
-  hadoop fs -copyFromLocal localPath hdfsPath
-  hadoop fs -get hdfsPath localPath
-```
-
-
 
 [top](#top)
 # Tips
