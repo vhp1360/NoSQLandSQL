@@ -56,7 +56,7 @@
       </property>
     ```
 ### find configuration
-```vala
+```prolog
   hdfs getconf -confKey fs.defaultFS
 ```
 
@@ -80,27 +80,27 @@ only is below statement may use in _core-site.xml_ file:
 # [Files And Directories Commands](#https://data-flair.training/blogs/top-hadoop-hdfs-commands-tutorial/)
 ## Create
 ### Create Folder
-```vala
+```prolog
   hdfs dfs -mkdir ...
 ```
 ## Delete
-```vala
+```prolog
   hdfs dfs -rm [-r] ...
   hdfs dfs -expunge   # empty trash
 ```
 ##  Read and Write
 ### Copy from local and vise versa
-```vala
+```prolog
   hdfs dfs -put|copyFromLocal|moveFromLocal localPath hdfsPath
   hdfs fs -get[merge]|copyTo|moveTo hdfsPath localPath
 ```
 ### Read
-```vala
+```prolog
   hdfs dfs -cat|tail [-f]| ...
 ```
 ## Browse
 ### Browse
-```vala
+```prolog
   hdfs dfs -ls [-R] ...
   hdfs dfs -mv|cp ... ...
 ```
@@ -108,7 +108,7 @@ only is below statement may use in _core-site.xml_ file:
 ## [Permissions](https://hadoop.apache.org/docs/r2.7.1/hadoop-project-dist/hadoop-hdfs/HdfsPermissionsGuide.html)
 - consider below commands:
 - it has all linux Permission's commands:
-```vala
+```prolog
   hdfs dfs -chown|chmod|chgrp [-R] UserName:GroupName ...
   hdfs dfs -setfacl [Optrions One by One] u|g:Name|:Permission ...
   hdfs dfs -getfacl ...
