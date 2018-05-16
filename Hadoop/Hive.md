@@ -3,8 +3,8 @@
 - [Hive installation](#hive-installation)
   - [Install with Derby](#install-with-derby)
   - [Install with MySQL](#install-with-mysql)
-- [Loading Csv](#loading-csv)
 - [Sql Commands](#sql-commands)
+  - [Specialy for Loading Csv](#specialy-for-loading-csv)
 - [Tips](#tips)
 
 # Hive installation:
@@ -37,25 +37,7 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
 
 [top](#top)
 
-# Loading Csv
-- [one way](http://www.informit.com/articles/article.aspx?p=2756471&seqNum=4):
-```vala
-  CREATE EXTERNAL TABLE IF NOT EXISTS Names(Field1 INT,Field2 STRING,Field3 DATE,...)
-    COMMENT 'Table Comment' ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE
-    LOCATION '/Path/2/CSV';
-```
-- another way:
-```vala
-  CREATE TABLE TableName (...) row format delimited fields terminated by ',';
-  LOAD DATA LOCAL INPATH '/home/yourcsvfile.csv' OVERWRITE INTO TABLE TableName;
-```
-  - in loading for Int column I faced Null in first record Result, for this use [tblproperties ("skip.header.line.count"="1")](https://stackoverflow.com/questions/43631472/how-i-avoid-the-null-in-the-first-field-name-of-hive-table)
-  - to show column name in query: `hive>set hive.cli.print.header=true;`
-  
-
-[top](#top)
-
-# Sql Commands
+# [Sql Commands](http://blog.einext.com/apache-spark/launching-thrift-server-on-spark-sql)
 ### Meta Data:
 ```sql
   show tables;
@@ -73,6 +55,23 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
   OUTPUTFORMAT "parquet.hive.DeprecatedParquetOutputFormat" LOCATION '/';
   create table TableName(Field1 Type1,...) USING com.databricks.spark.csv OPTIONS (path 'hdfs:///...');
 ```
+##### Specialy for Loading Csv
+- [one way](http://www.informit.com/articles/article.aspx?p=2756471&seqNum=4):
+```vala
+  CREATE EXTERNAL TABLE IF NOT EXISTS Names(Field1 INT,Field2 STRING,Field3 DATE,...)
+    COMMENT 'Table Comment' ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE
+    LOCATION '/Path/2/CSV';
+```
+- another way:
+```vala
+  CREATE TABLE TableName (...) row format delimited fields terminated by ',';
+  LOAD DATA LOCAL INPATH '/home/yourcsvfile.csv' OVERWRITE INTO TABLE TableName;
+```
+  - in loading for Int column I faced Null in first record Result, for this use [tblproperties ("skip.header.line.count"="1")](https://stackoverflow.com/questions/43631472/how-i-avoid-the-null-in-the-first-field-name-of-hive-table)
+  - to show column name in query: `hive>set hive.cli.print.header=true;`
+  
+
+[top](#top)
 
 
 ### Query:
