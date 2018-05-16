@@ -7,13 +7,17 @@
 [top](#top)
 # Thrif Server
 my experience:
-  1- first we need hadoop and spark distributed
-  2- _thriftserver_ no need any extra configuration file, so just run it:
-  ```prolog
-    /Path2Spark/sbin/start-thriftserver.sh --master spark://master:7077 --hiveconf spark.cores.max=CoreNo. --hiveconf spark.executor.memory=MmG
+  1. first we need hadoop and spark distributed
+  2. _thriftserver_ no need any extra configuration file, so just run it:
+  ```vala
+    /Path2Spark/sbin/start-thriftserver.sh --master spark://master:7077 --hiveconf spark.cores.max=CoreNo.
+    --hiveconf spark.executor.memory=MmG
   ```
-    - if you do not use _spark.cores.max=CoreNo.,spark.executor.memory=MmG_ optins, __ThriftServer__ will eat resourcesses as much as it can.
-    - some blogs advised to copy hive config file to _spark/conf/_ , but I could run it wothout that.
+
+    . if you do not use _spark.cores.max=CoreNo.,spark.executor.memory=MmG_ optins, 
+      __ThriftServer__ will eat resourcesses as much as it can.
+    . some blogs advised to copy hive config file to _spark/conf/_ , 
+      but I could run it wothout that.
   3- to run beeline (_the thrift Interface_) :
   ```prolog
     /Path2Spark/bin/beeline
