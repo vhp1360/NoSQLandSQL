@@ -8,6 +8,7 @@
 - [Tips](#tips)
 
 # Hive installation:
+[this](https://www.guru99.com/hive-tutorials.html) hive tutorial is good, but [this](https://www.bmc.com/guides/hadoop-hive.html) one is more better.
 
 ### Install with derby
 by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) or [this](http://thompsonng.blogspot.fr/2017/01/hadoop-installing-hive-with-derby.html)
