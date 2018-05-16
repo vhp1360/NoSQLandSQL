@@ -56,13 +56,26 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
 [top](#top)
 
 # Sql Commands
-- Meta Data:
+### Meta Data:
 ```sql
   show tables;
+  describe TableName;
   alter table TblName rename to NewName;
   
 ```
-- Query:
+### CRUD:
+```sql
+  create table TableName(Field1 Type1,...) STORED AS PARQUET LOCATION 'hdfs:///Path/On/Hdfs';
+  create table TableName(Field1 Type1,...) USING org.apache.spark.sql.parquet OPTIONS (path
+  'hdfs:///...');
+  create table TableName(Field1 Type1,...) ROW FORMAT SERDE 'parquet.hive.serde.ParquetHiveSerDe' 
+  STORED AS INPUTFORMAT "parquet.hive.DeprecatedParquetInputFormat" 
+  OUTPUTFORMAT "parquet.hive.DeprecatedParquetOutputFormat" LOCATION '/';
+  create table TableName(Field1 Type1,...) USING com.databricks.spark.csv OPTIONS (path 'hdfs:///...');
+```
+
+
+### Query:
 ```sql
 
 ```
