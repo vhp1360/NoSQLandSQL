@@ -38,6 +38,7 @@ by [this](https://cwiki.apache.org/confluence/display/Hive/HiveDerbyServerMode) 
 [top](#top)
 
 # [Sql Commands](http://blog.einext.com/apache-spark/launching-thrift-server-on-spark-sql)
+- hive provide _hive_ and _beeline_ interface to run queries. this [link](https://www.bmc.com/blogs/apache-hive-beeline-client-import-csv-file-into-hive/) contain v ery good explanation and examples.
 ### Meta Data:
 ```sql
   show tables;
